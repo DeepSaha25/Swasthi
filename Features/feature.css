@@ -1,0 +1,72 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* Main container */
+main {
+    padding: 2rem;
+}
+
+/* Grid container for all the feature cards */
+.features-grid {
+    display: grid;
+    /* Create responsive columns: they will be at least 280px wide, and the browser will fit as many as it can per row. */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; /* The space between the grid items */
+}
+
+/* The feature card itself */
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid transparent; /* Placeholder for the colored border */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Heading Styling (H2) */
+.feature-card h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333; /* Darker color for better contrast */
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+/* Paragraph Styling */
+.feature-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Icon Styling - color is now handled by the classes below */
+.feature-icon {
+    margin-bottom: 1rem;
+}
+
+/* --- COLOR CLASSES --- */
+.card-blue { border-top-color: #007bff; }
+.card-blue .feature-icon { color: #007bff; }
+
+.card-green { border-top-color: #28a745; }
+.card-green .feature-icon { color: #28a745; }
+
+.card-orange { border-top-color: #fd7e14; }
+.card-orange .feature-icon { color: #fd7e14; }
+
+.card-purple { border-top-color: #6f42c1; }
+.card-purple .feature-icon { color: #6f42c1; }

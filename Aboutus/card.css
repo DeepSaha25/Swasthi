@@ -1,0 +1,201 @@
+/* --- DESIGN SYSTEM & RESET --- */
+:root {
+    --dark-navy: #0a192f;
+    --navy: #112240;
+    --light-slate: #ccd6f6;
+    --slate: #8892b0;
+    --mint: #64ffda;
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--dark-navy);
+    color: var(--slate);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- CUSTOM CURSOR --- */
+.cursor-dot, .cursor-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 9999;
+}
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--mint);
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid hsla(164, 96%, 69%, 0.5);
+}
+.cursor-dot.hidden, .cursor-outline.hidden {
+    opacity: 0;
+}
+.cursor-outline.hovered {
+    transform: translate(-50%, -50%) scale(1.4);
+    background-color: hsla(164, 96%, 69%, 0.1);
+}
+
+
+/* --- HERO SECTION --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg-shape {
+    position: absolute;
+    bottom: -20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(100, 255, 218, 0.1) 0%, rgba(100, 255, 218, 0) 70%);
+    z-index: -1;
+}
+
+.hero .container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.hero-title, .hero-subtitle, .btn {
+    opacity: 0; /* Initially hidden for GSAP animation */
+}
+
+.hero-title {
+    font-family: var(--font-mono);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--light-slate);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+.hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--mint);
+    border-radius: 4px;
+    color: var(--mint);
+    background-color: transparent;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+/* --- TEAM SECTION --- */
+.team-section {
+    padding: 100px 0;
+}
+.section-title {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    color: var(--light-slate);
+    text-align: center;
+    margin-bottom: 4rem;
+    opacity: 0; /* For scroll reveal */
+    transform: translateY(30px); /* For scroll reveal */
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* --- CARD STYLING (REFINED) --- */
+.card {
+    background-color: var(--navy);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0; /* For scroll reveal */
+    transform: translateY(30px); /* For scroll reveal */
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px -15px rgba(2,12,27,0.7), 0 0 15px rgba(100, 255, 218, 0.2);
+}
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(50%) contrast(1.1);
+    transition: filter 0.3s ease;
+}
+.card:hover img {
+    filter: grayscale(0%) contrast(1);
+}
+.card-content {
+    padding: 1.5rem;
+}
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--light-slate);
+}
+.card-role {
+    font-size: 0.9rem;
+    color: var(--mint);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+}
+.card-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+.info {
+    text-decoration: none;
+    color: var(--mint);
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--mint);
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    flex-grow: 1;
+}
+.info:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+}
