@@ -18,25 +18,3 @@ Built for **SIH problem statement: SIH25049 – AI-Driven Public Health Chatbot 
 
 ---
 
-## Tech stack  
-
-
-## Project Directory Structure
-
-```
-~/
-├── src/
-│   ├── index.js                # Main entry point for backend logic
-│   ├── Events/
-│   │   └── textMessage.js      # Telegram bot event handler for text messages
-│   └── Utils/
-│       ├── eventHandler.js     # Utility functions for event handling
-│       └── frontendHandler.js  # Express server for serving frontend files
-├── www/
-│   ├── index.html              # Main frontend HTML file
-│   ├── style.css, card.css     # CSS stylesheets
-│   ├── card.js, script.js      # Frontend JavaScript files
-│   └── [images, assets]        # Static assets (jpg, png, etc.)
-├── package.json                # Node.js dependencies and scripts
-└── README.md                   # Project documentation
-```
