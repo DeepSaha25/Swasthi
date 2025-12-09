@@ -4,7 +4,6 @@
 ## Overview  
 Swasthi is a multilingual AI chatbot designed to support **preventive healthcare awareness** for rural and semi-urban populations. It answers health queries, reminds users about vaccination schedules, 
 
-Built for **SIH problem statement: SIH25049 – AI-Driven Public Health Chatbot for Disease Awareness**.  
 
 ---
 
